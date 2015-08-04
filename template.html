@@ -144,6 +144,21 @@
         text-decoration: none;
       }
 
+      .authors-list {
+          float: right;
+          list-style: none;
+          color: #427ea3;
+      }
+
+      .authors-list li {
+          float: left;
+          margin-right: 10px;
+      }
+
+      .authors-list a {
+          color: #427ea3;
+      }
+
       .post img,
       .photoset,
       .photoset img,
@@ -325,6 +340,9 @@
   	{block:Description}
   		<p>{Description}</p>
   	{/block:Description}
+    <ul class="authors-list">
+        <li><a href="http://buknotes.tumblr.com/authors">Список авторов</a></li>
+    </ul>
   </header>
 
 		<div class="content wrap">
