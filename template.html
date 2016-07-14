@@ -205,6 +205,28 @@
       .authors-list a:hover {
           text-decoration: underline;
       }
+      
+      .main-search {
+          float: right;
+      }
+      
+      .main-search input {
+          border: 1px solid #aaa;
+          border-radius: 2px;
+          font-size: 14px;
+          padding: 5px;
+          border: 1px solid #aaa;
+          outline: none;
+          -webkit-appearance: none;
+      }
+      
+      .main-search input:focus {
+          border-color: #427ea3;
+      }
+      
+      .main-search input[type=submit] {
+          display: none;
+      }
 
       .post img {
           height: auto;
@@ -438,12 +460,16 @@
         <li><a href="/authors">Список авторов</a></li>
         <li><a href="/archive">Архив</a></li>
     </ul>
+    <form class="main-search" action="/search" method="get">
+        <input type="text" name="q" value="{SearchQuery}" placeholder="Поиск"/>
+        <input type="submit" value="Найти"/>
+    </form>
   </header>
 
         <div class="content wrap">
             <section class="posts">
                 {block:NoSearchResults}
-                    <h2>Sorry, nothing found for &ldquo;{SearchQuery}&rdquo;.</h2>
+                    <h2>Ничего не найдено по запросу &ldquo;{SearchQuery}&rdquo;.</h2>
                 {/block:NoSearchResults}
 
                 {block:TagPage}
