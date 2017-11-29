@@ -7,7 +7,7 @@
       Terms: Protected under Creative Commons. [http://creativecommons.org/licenses/by-nc/3.0/]
 
 -->
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
         <!-- Custom Variables -->
@@ -430,47 +430,49 @@
     </symbol>
 </svg>
 
-  <header>
+  <header aria-label="шапка сайта">
     {block:IfLogoImage}<a href="/"><img src="{image:Logo}" class="logo" /></a>{/block:IfLogoImage}
-      <h1><a href="/">{Title}</a></h1>
-      {block:Description}
-          <p>{Description}</p>
-      {/block:Description}
-      <ul class="social-icons">
+      <h1><a href="/" aria-label="Добро пожаловать в букноутс">{Title}</a></h1>
+      <div aria-hidden="true">
+          {block:Description}
+              <p>{Description}</p>
+          {/block:Description}
+      </div>
+      <menu class="social-icons" aria-label="Ссылки на наши аккаунты в соцсетях">
           <li>
-              <a href="https://instagram.com/buknotes/" target="_blank">
+              <a href="https://instagram.com/buknotes/" target="_blank" aria-label="наш инстаграм">
                   <svg class="icon-instagram">
                       <use xlink:href="#icon-instagram"></use>
                   </svg>
               </a>
           </li>
           <li>
-              <a href="https://vk.com/buknotes" target="_blank">
+              <a href="https://vk.com/buknotes" target="_blank" aria-label="группа вконтакте">
                   <svg class="icon-vk">
                       <use xlink:href="#icon-vk"></use>
                   </svg>
               </a>
           </li>
           <li>
-              <a href="https://www.youtube.com/channel/UCqRuT3UC6_emg1biH7kSoFQ" target="_blank">
+              <a href="https://www.youtube.com/channel/UCqRuT3UC6_emg1biH7kSoFQ" target="_blank" aria-label="канал на ютубе">
                   <svg class="icon-youtube">
                       <use xlink:href="#icon-youtube"></use>
                   </svg>
               </a>
           </li>
-      </ul>
-    <ul class="authors-list">
+      </menu>
+    <menu class="authors-list" aria-label="Главное меню">
         <li><a href="/submit">Предложить заметки</a></li>
         <li><a href="/authors">Список авторов</a></li>
         <li><a href="/archive">Архив</a></li>
-    </ul>
+    </menu>
     <form class="main-search" action="/search" method="get">
-        <input type="text" name="q" value="{SearchQuery}" placeholder="Поиск"/>
+        <input type="text" name="q" value="{SearchQuery}" placeholder="Поиск" aria-label="Поиск заметок"/>
         <input type="submit" value="Найти"/>
     </form>
   </header>
 
-        <div class="content wrap">
+        <main class="content wrap">
             <section class="posts">
                 {block:NoSearchResults}
                     <h2>Ничего не найдено по запросу &ldquo;{SearchQuery}&rdquo;.</h2>
@@ -495,7 +497,7 @@
 
                         {block:Photo}
                             {LinkOpenTag}
-                <img src="{PhotoURL-HighRes}" alt="{PhotoAlt}">
+                                <img src="{PhotoURL-HighRes}" alt="{PhotoAlt}">
                             {LinkCloseTag}
 
                             {block:Caption}
@@ -634,7 +636,7 @@
                 {/block:Pagination}
 
             </section> <!-- /posts -->
-        </div> <!-- /content -->
+        </main> <!-- /content -->
 
     <footer class="small wrap">
       {block:HasPages}
