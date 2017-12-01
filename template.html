@@ -479,7 +479,7 @@
     </form>
   </header>
 
-        <main class="content wrap">
+        <main class="content wrap" aria-label="Основной контент сайта">
             <section class="posts">
                 {block:NoSearchResults}
                     <h2>Ничего не найдено по запросу &ldquo;{SearchQuery}&rdquo;.</h2>
@@ -493,12 +493,12 @@
                     <article class="post {PostType}">
                         {block:Text}
                             {block:Title}
-                                <a href="{Permalink}" class="post-title"><h2>{Title}</h2></a>
+                                <a href="{Permalink}" class="post-title" aria-label="Читать заметки по книге {Title}, опубликовано {TimeAgo}"><h2>{Title}</h2></a>
                             {/block:Title}
 
                             {Body}
 
-                            {block:More}<a href="{Permalink}" class="p read-more">Читать дальше &raquo;</a>{/block:More}
+                            {block:More}<a href="{Permalink}" class="p read-more" aria-hidden="true">Читать дальше &raquo;</a>{/block:More}
 
                         {/block:Text}
 
@@ -580,7 +580,7 @@
                         {/block:Answer}
 
                         {block:Date}
-                            <footer>
+                            <footer aria-hidden="true">
                                 <ul class="small">
                                     <li><a href="{Permalink}" title="{DayOfWeek}, {DayOfMonth} {Month} {Year}, {24Hour}:{Minutes}:{Seconds}">{TimeAgo}</a></li>
                                     {block:RebloggedFrom}<li class="source"> (reblogged from <a href="{ReblogParentURL}">{ReblogParentName}</a>)</li>{/block:RebloggedFrom}
@@ -602,7 +602,7 @@
 
                                 {block:IfDisqusShortname}
 
-                                <div id="disqus_thread"></div>
+                                <div id="disqus_thread" aria-hidden="true"></div>
                                 <script type="text/javascript">
                                     /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
                                     var disqus_shortname = '{text:Disqus Shortname}'; // Required - Enter shortname in Tumblr Theme Options
