@@ -216,20 +216,27 @@
       }
 
       .main-search input {
+          width: 180px;
           border: 1px solid #aaa;
           border-radius: 2px;
           font-size: 14px;
           padding: 5px;
           outline: none;
           -webkit-appearance: none;
+          transition: width 0.3s;
       }
 
       .main-search input:focus {
           border-color: #427ea3;
+          width: 276px;
       }
 
       .main-search input[type=submit] {
           display: none;
+      }
+
+      .posts article:first-child {
+          margin-top: 20px;
       }
 
       .post img {
@@ -499,13 +506,15 @@
                         {/block:Text}
 
                         {block:Photo}
-                            {LinkOpenTag}
-                                <img src="{PhotoURL-HighRes}" alt="{PhotoAlt}">
-                            {LinkCloseTag}
+                            <a href="{Permalink}" class="p read-more" aria-hidden="true">
+                                <img src="{PhotoURL-HighRes}" alt="">
+                            </a>
 
                             {block:Caption}
                                 {Caption}
                             {/block:Caption}
+
+                            {block:More}<a href="{Permalink}" class="p read-more" aria-label="Читать заметки по книге, опубликовано {TimeAgo}">Читать дальше &raquo;</a>{/block:More}
                         {/block:Photo}
 
                         {block:Photoset}
@@ -620,7 +629,7 @@
 
                             </footer>
                         {/block:Date}
-                    </article> <!-- /post -->
+                    </article>
 
                   {block:PostNotes}
                     <aside class="notes">
